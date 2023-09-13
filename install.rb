@@ -7,6 +7,7 @@ end
 
 include_recipe 'helper'
 
+include_cookbook 'macos'
 include_cookbook 'homebrew'
 include_cookbook 'anyenv'
 include_cookbook 'go'
