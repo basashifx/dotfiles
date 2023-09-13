@@ -32,6 +32,11 @@ execute "git clone https://github.com/znz/anyenv-update.git #{anyenv_root}/plugi
 end
 
 envs.each do |env|
+  # トレンドマイクロが入ってると rbenv/pyenv install はコケる
+  if (env[:name] == 'rbenv' || env[:name] == 'pyenv') && system('test -d /Applications/TrendMicroSecurity.app')
+    next
+  end
+
   execute "anyenv install #{env[:name]}" do
     not_if "which #{env[:name]}"
   end
