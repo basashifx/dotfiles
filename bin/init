@@ -13,6 +13,6 @@ if [ ! -f "${mitamae_cache}" ]; then
   chmod +x "${mitamae_cache}"
 fi
 
-ln -sf "${mitamae_cache}" mitamaet
+ln -sf "${mitamae_cache}" mitamae
 
 ./mitamae local ../install.rb "$@"
