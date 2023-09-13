@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+set -eu
+
+cd "$(dirname "$0")"
+
+mitamae_version=1.14.0
+mitamae_cache="mitamae-${mitamae_version}"
+
+if [ ! -f "${mitamae_cache}" ]; then
+  curl -fL https://github.com/itamae-kitchen/mitamae/releases/download/v${mitamae_version}/mitamae-aarch64-darwin.tar.gz | tar xvz
+  mv mitamae-aarch64-darwin "${mitamae_cache}"
+  ln -sf "${mitamae_cache}" mitamae
+  chmod +x mitamae
+fi
+
+./mitamae local ../install.rb
+#./mitamae local ../install.rb --dry-run
