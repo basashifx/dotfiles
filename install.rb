@@ -5,6 +5,8 @@ MItamae::RecipeContext.class_eval do
   end
 end
 
+include_recipe 'helper'
+
 include_cookbook 'homebrew'
 include_cookbook 'anyenv'
 include_cookbook 'go'
