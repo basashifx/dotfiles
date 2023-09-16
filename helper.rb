@@ -1,7 +1,8 @@
-define :ln do
+define :config do
   config = File.join(ENV['HOME'], params[:name])
   link config do
     to File.expand_path("../config/#{params[:name]}", __FILE__)
+    force true
   end
 end
 

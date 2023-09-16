@@ -2,7 +2,7 @@ execute '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/i
   not_if 'which brew'
 end
 
-ln '.Brewfile'
+config '.Brewfile'
 
 execute 'brew update'
 execute 'brew doctor'
