@@ -17,17 +17,18 @@ format = "[$branch(:$remote_branch)]($style) "
 truncation_length = 100
 
 [git_status]
-format = '$all_status$ahead_behind'
-conflicted = '💥 '
-behind = '😰 '
-diverged = '😵 '
-up_to_date = '[✓](#8ABEB7 bold)'
-untracked = '[untracked:$count](#DE935F bold) '
-stashed = '📦 '
-modified = '[modified:$count](#B5BD68 bold) '
-staged = '[staged:$count](#CC6666 bold) '
-renamed = '[renamed:$count](#81A2BE bold) '
-deleted = '[deleted:$count](#B294BB bold) '
+format = '$all_status$ahead_behind '
+conflicted = '[=](#CC6666 bold) '
+ahead = '[⇡](#B5BD68 bold) '
+behind = '[⇣](#B5BD68 bold) '
+diverged = '[⇕](#B5BD68 bold) '
+up_to_date = '[✓](#8ABEB7 bold) '
+untracked = '[?](#DE935F bold) '
+stashed = '[$](#CC6666 bold) '
+modified = '[!](#DE935F bold) '
+staged = '[+](#B5BD68 bold) '
+renamed = '[»](#DE935F bold) '
+deleted = '[✘](#DE935F bold) '
 
 [aws]
 disabled = true
