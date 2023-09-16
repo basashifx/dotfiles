@@ -38,8 +38,10 @@ brew "lazydocker"
 brew "mas"
 brew "minamijoyo/tfschema/tfschema"
 brew "peco"
+brew "sheldon"
 brew "sops"
 brew "source-highlight"
+brew "starship"
 # brew "synergy" 3系がstableになるまで手動
 brew "terminal-notifier"
 brew "tflint"
@@ -90,19 +92,19 @@ cask "vlc"
 cask "zoom"
 
 mas "Amphetamine", id: 937984704
-mas "com.alice.mac.GetPlainText", id: 508368068
 mas "Display Maid", id: 450063525
 mas "Divvy", id: 413857545
-mas "grsyncx", id: 1506997025
 mas "Keynote", id: 409183694
 mas "LINE", id: 539883307
 mas "Magnet", id: 441258766
 mas "Numbers", id: 409203825
 mas "Okta Verify", id: 490179405
 mas "Pages", id: 409201541
+mas "Paste Plain Text", id: 1407015686
 mas "ScreenNote", id: 1258500140
 mas "VirusBarrier Scanner", id: 1200445649
 mas "Xcode", id: 497799835
+mas "grsyncx", id: 1506997025
 
 vscode "JeylaniB.pinescript"
 vscode "MS-CEINTL.vscode-language-pack-ja"
