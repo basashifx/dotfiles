@@ -1,0 +1,45 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
+[character]
+success_symbol = "[%](bold)"
+error_symbol = "[%](#CC6666 bold)"
+
+[directory]
+style = '#81A2BE bold'
+truncation_length = 100
+truncate_to_repo = false
+
+[git_branch]
+style = '#B294BB bold'
+format = "[$branch(:$remote_branch)]($style) "
+truncation_length = 100
+
+[git_status]
+format = '$all_status$ahead_behind'
+conflicted = '💥 '
+behind = '😰 '
+diverged = '😵 '
+up_to_date = '[✓](#8ABEB7 bold)'
+untracked = '[untracked:$count](#DE935F bold) '
+stashed = '📦 '
+modified = '[modified:$count](#B5BD68 bold) '
+staged = '[staged:$count](#CC6666 bold) '
+renamed = '[renamed:$count](#81A2BE bold) '
+deleted = '[deleted:$count](#B294BB bold) '
+
+[aws]
+disabled = true
+
+[battery]
+disabled = true
+
+[golang]
+disabled = true
+
+[ruby]
+disabled = true
+
+[terraform]
+disabled = true
