@@ -15,5 +15,9 @@ github = 'marlonrichert/zsh-autocomplete'
 github = 'zsh-users/zsh-syntax-highlighting'
 apply = ['defer']
 
+[plugins.enhancd]
+github = 'babarot/enhancd'
+use = ['init.sh']
+
 [templates]
 defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
