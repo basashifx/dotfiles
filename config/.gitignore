@@ -1,5 +1,3 @@
-tmp
-
 # JetBrains
 .idea
 *.iml
@@ -128,7 +126,7 @@ bower.json
 
 *.gem
 *.rbc
-/.config
+#/.config
 /coverage/
 /InstalledFiles
 /pkg/
