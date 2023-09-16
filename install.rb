@@ -9,5 +9,10 @@ include_recipe 'helper'
 
 include_cookbook 'macos'
 include_cookbook 'homebrew'
+
 include_cookbook 'anyenv'
+include_cookbook 'config'
+include_cookbook 'git'
 include_cookbook 'go'
+include_cookbook 'ssh'
+include_cookbook 'zsh'
