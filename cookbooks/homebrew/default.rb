@@ -2,11 +2,8 @@ execute '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/i
   not_if 'which brew'
 end
 
-link File.join(ENV['HOME'], '.Brewfile') do
-  to File.expand_path('../files/Brewfile', __FILE__)
-  force true
-end
+ln '.Brewfile'
 
 execute 'brew update'
 execute 'brew doctor'
-execute 'brew bundle --global'
+execute 'brew bundle --global --verbose'

@@ -1,3 +1,10 @@
+define :ln do
+  config = File.join(ENV['HOME'], params[:name])
+  link config do
+    to File.expand_path("../config/#{params[:name]}", __FILE__)
+  end
+end
+
 define :install_env, version: nil do
   # トレンドマイクロが入ってると rbenv/pyenv install はコケる
   if (params[:name] == 'rbenv' || params[:name] == 'pyenv') && system('test -d /Applications/TrendMicroSecurity.app')
