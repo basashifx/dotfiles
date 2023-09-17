@@ -1,3 +1,4 @@
+config '.config/karabiner/karabiner.json'
 config '.curlrc'
 config '.hushlogin'
 config '.wgetrc'
