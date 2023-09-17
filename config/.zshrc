@@ -16,6 +16,18 @@ export SAVEHIST=1000000
 export LESS='-R'
 export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
 
+peco-src () {
+    local repo=$(ghq list | peco --query "$LBUFFER")
+    if [ -n "$repo" ]; then
+        repo=$(ghq list --full-path --exact $repo)
+        BUFFER="cd ${repo}"
+        zle accept-line
+    fi
+    zle clear-screen
+}
+zle -N peco-src
+bindkey '^]' peco-src
+
 function peco-select-history() {
     local tac
     if which tac > /dev/null; then
