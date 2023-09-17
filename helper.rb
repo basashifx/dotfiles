@@ -1,4 +1,9 @@
 define :config do
+  dirname = File.dirname(params[:name])
+  unless dirname == '.'
+    directory File.join(ENV['HOME'], dirname)
+  end
+
   config = File.join(ENV['HOME'], params[:name])
   link config do
     to File.expand_path("../config/#{params[:name]}", __FILE__)
