@@ -44,7 +44,5 @@ function peco-select-history() {
 zle -N peco-select-history
 bindkey '^r' peco-select-history
 
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
-
 source $HOME/.zshrc.alias
 source $HOME/.zshrc.local

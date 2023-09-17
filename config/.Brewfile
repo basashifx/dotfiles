@@ -8,7 +8,6 @@ tap "minamijoyo/tfschema"
 
 brew "ack"
 brew "anyenv"
-brew "autojump"
 brew "awscli"
 brew "ccat"
 brew "colordiff"
