@@ -1,49 +1,51 @@
 [user]
-    user = basashi
-    email = basashi0414@gmail.com
-    useConfigOnly = true
+	name = basashi
+	email = basashi0414@gmail.com
+	useConfigOnly = true
 [core]
-    editor = vim
-    excludesfile = ~/.gitignore
-    ignorecase = false
-    pager = delta
+	editor = vim
+	excludesfile = ~/.gitignore
+	ignorecase = false
+	pager = delta
 [color]
-    ui = true
+	ui = true
 [credential]
-    helper = osxkeychain
+	helper = osxkeychain
 [include]
-    path = ~/.gitconfig.local
+	path = ~/.gitconfig.local
 [init]
-    templatedir = ~/.git-templates/git-secrets
+	templatedir = ~/.git-templates/git-secrets
 	defaultBranch = main
 [secrets]
-    providers = git secrets --aws-provider
-    patterns = (A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}
-    patterns = (\"|')?(AWS|aws|Aws)?_?(SECRET|secret|Secret)?_?(ACCESS|access|Access)?_?(KEY|key|Key)(\"|')?\\s*(:|=>|=)\\s*(\"|')?[A-Za-z0-9/\\+=]{40}(\"|')?
-    patterns = (\"|')?(AWS|aws|Aws)?_?(ACCOUNT|account|Account)_?(ID|id|Id)?(\"|')?\\s*(:|=>|=)\\s*(\"|')?[0-9]{4}\\-?[0-9]{4}\\-?[0-9]{4}(\"|')?
-    patterns = xox[bp]-[0-9]+-[a-zA-Z0-9]+
-    patterns = -BEGIN (RSA|DSA) PRIVATE KEY-
-    allowed = AKIAIOSFODNN7EXAMPLE
-    allowed = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+	providers = git secrets --aws-provider
+	patterns = (A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}
+	patterns = (\"|')?(AWS|aws|Aws)?_?(SECRET|secret|Secret)?_?(ACCESS|access|Access)?_?(KEY|key|Key)(\"|')?\\s*(:|=>|=)\\s*(\"|')?[A-Za-z0-9/\\+=]{40}(\"|')?
+	patterns = (\"|')?(AWS|aws|Aws)?_?(ACCOUNT|account|Account)_?(ID|id|Id)?(\"|')?\\s*(:|=>|=)\\s*(\"|')?[0-9]{4}\\-?[0-9]{4}\\-?[0-9]{4}(\"|')?
+	patterns = xox[bp]-[0-9]+-[a-zA-Z0-9]+
+	patterns = -BEGIN (RSA|DSA) PRIVATE KEY-
+	allowed = AKIAIOSFODNN7EXAMPLE
+	allowed = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 [merge]
-    ff = false
-    conflictstyle = diff3
+	ff = false
+	conflictstyle = diff3
 [pull]
-    ff = only
+	ff = only
+[push]
+	autoSetupRemote = true
 [diff]
-    colorMoved = default
+	colorMoved = default
 [pager]
-    diff = delta
+	diff = delta
 [delta]
-    side-by-side = true
-    line-numbers = true
-    navigate = true
-    keep-plus-minus-markers = true
-    syntax-theme = Monokai Extended
+	side-by-side = true
+	line-numbers = true
+	navigate = true
+	keep-plus-minus-markers = true
+	syntax-theme = Monokai Extended
 [interactive]
-    diffFilter = delta --color-only
+	diffFilter = delta --color-only
 [ghq]
-    root = ~/repositories
+	root = ~/repositories
 [ghq "https://github.com/basashifx"]
-    root = ~/dev
-    user = basashifx
+	root = ~/dev
+	user = basashifx
