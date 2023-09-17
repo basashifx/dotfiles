@@ -156,3 +156,9 @@ alias dirm='docker images | grep none | awk "{ print $3}" | xargs docker rmi -f'
 alias gore='gore -autoimport'
 alias aldlg='aws logs describe-log-groups --query "logGroups[].[logGroupName]" --output text'
 alias gupdate='ghq list | grep github.com | ghq get --update --parallel'
+alias bat='bat --paging=never'
+alias cat=ccat
+alias ack=rg
+alias ag=rg
+alias peco=fzf
+
