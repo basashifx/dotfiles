@@ -27,6 +27,7 @@ brew "gibo"
 brew "git"
 brew "git-delta"
 brew "git-secrets"
+brew "gnumeric" # ssconvert に必要
 brew "grep"
 brew "highlight"
 brew "htop"
