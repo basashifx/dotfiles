@@ -6,9 +6,7 @@ link File.join(ENV['HOME'], 'anyenv') do
   force true
 end
 
-directory File.join(anyenv_root, 'plugins') do
-  action :create
-end
+directory File.join(anyenv_root, 'plugins')
 
 execute "git clone https://github.com/znz/anyenv-update.git #{anyenv_root}/plugins/anyenv-update" do
   not_if "test -d #{anyenv_root}/plugins/anyenv-update"
