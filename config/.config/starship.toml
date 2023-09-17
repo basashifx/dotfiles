@@ -39,6 +39,12 @@ disabled = true
 [battery]
 disabled = true
 
+[c]
+disabled = true
+
+[cmake]
+disabled = true
+
 [docker_context]
 disabled = true
 
@@ -52,6 +58,9 @@ disabled = true
 disabled = true
 
 [perl]
+disabled = true
+
+[php]
 disabled = true
 
 [python]
