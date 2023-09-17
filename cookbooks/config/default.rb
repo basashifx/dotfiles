@@ -1,5 +1,6 @@
 config '.config/karabiner/karabiner.json'
 config '.curlrc'
+config '.fzf.zsh'
 config '.hushlogin'
 config '.wgetrc'
 config '.terraformrc'

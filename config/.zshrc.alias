@@ -135,7 +135,6 @@ alias gcl='git clean -fd'
 alias gsw='git switch'
 alias grs='git restore'
 alias gbddevelop='git branch --merged develop | grep -vE "^\*|master$|develop$" | xargs -I {} git branch -d {}'
-alias less='less -R'
 alias curlh='curl --dump-header -'
 alias h='cd ~'
 alias d='cd ~/dev'
@@ -145,30 +144,10 @@ alias wo='cd ~/work'
 alias t='cd ~/tmp'
 alias o='open'
 alias grepi='grep -i'
-if [[ -x `which tree` ]]; then
-    alias tree='tree -N'
-fi
-if [[ -x `which ack` ]]; then
-    alias ackl='ack --pager=less'
-    alias acki='ack -i'
-    alias ackli='ack --pager=less -i'
-fi
-if [[ -x `which colordiff` ]]; then
-    alias diff='colordiff -u'
-else
-    alias diff=`diff -u`
-fi
-if [[ -x `which trash` ]]; then
-    alias alias rm='trash -F'
-else
-    alias diff=`rm -i`
-fi
-if [[ -x `which autojump` && -f '/usr/local/bin/jo' ]]; then
-    alias joo='/usr/local/bin/jo'
-fi
-if [[ -x `which ccat` ]]; then
-    alias alias cat='ccat'
-fi
+alias tree='tree -N'
+alias rgi='rg -i'
+alias diff='colordiff -u'
+alias alias rm='trash -F'
 alias dp='docker ps'
 alias dr='docker rm -f'
 alias de='docker exec -it'
