@@ -1,4 +1,6 @@
 [user]
+    user = basashi
+    email = basashi0414@gmail.com
     useConfigOnly = true
 [core]
     editor = vim
