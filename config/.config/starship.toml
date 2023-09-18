@@ -2,6 +2,14 @@
 
 add_newline = true
 
+format = """
+$directory\
+$git_branch\
+$git_status\
+$cmd_duration\
+$line_break\
+$character"""
+
 [character]
 success_symbol = "[%](bold)"
 error_symbol = "[%](#CC6666 bold)"
@@ -32,42 +40,3 @@ modified = '[!](#DE935F bold) '
 staged = '[+](#B5BD68 bold) '
 renamed = '[»](#DE935F bold) '
 deleted = '[✘](#DE935F bold) '
-
-[aws]
-disabled = true
-
-[battery]
-disabled = true
-
-[c]
-disabled = true
-
-[cmake]
-disabled = true
-
-[docker_context]
-disabled = true
-
-[golang]
-disabled = true
-
-[nodejs]
-disabled = true
-
-[package]
-disabled = true
-
-[perl]
-disabled = true
-
-[php]
-disabled = true
-
-[python]
-disabled = true
-
-[ruby]
-disabled = true
-
-[terraform]
-disabled = true
