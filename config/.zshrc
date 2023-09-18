@@ -28,16 +28,20 @@ function fzf-cd-ghq () {
 zle -N fzf-cd-ghq
 bindkey '^]' fzf-cd-ghq
 
-# ref: https://dev.classmethod.jp/articles/fzf-original-app-for-git-add/
-function gaf() {
+function fzf-git-add() {
     local selected=$(unbuffer git status --short | fzf --preview="echo {} | awk '{print \$2}' | xargs git diff --color" \
-        --preview-window right,50% --height 50% --reverse --ansi | awk '{print $2}')
+        --preview-window right,50% --height 50% --reverse --multi --ansi | awk '{print $2}')
 
     if [ -n "$selected" ]; then
-        git add $selected
-        echo "git add $selected"
+        local files=""
+        while IFS= read -r line; do
+            files="$files \"$line\""
+        done <<< "$selected"
+        eval git add $files
+        echo "git add $files"
     fi
 }
+alias fga=fzf-git-add
 
 source $HOME/.zshrc.alias
 source $HOME/.zshrc.local
