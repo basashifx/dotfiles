@@ -133,7 +133,7 @@ alias gcm='git commit -m'
 alias gcl='git clean -fd'
 alias gsw='git switch'
 alias grs='git restore'
-alias gbddevelop='git branch --merged develop | grep -vE "^\*|master$|develop$" | xargs -I {} git branch -d {}'
+alias gbddevelop='git branch --merged develop | grep -vE "^\*|main$|master$|develop$" | xargs -I {} git branch -d {}'
 alias curlh='curl --dump-header -'
 alias h='cd ~'
 alias d='cd ~/dev'
@@ -155,6 +155,7 @@ alias gore='gore -autoimport'
 alias aldlg='aws logs describe-log-groups --query "logGroups[].[logGroupName]" --output text'
 alias gupdate='ghq list | grep github.com | ghq get --update --parallel'
 alias bat='bat --paging=never'
+alias ppath='echo $PATH | tr ":" "\n"'
 alias cat=ccat
 alias ack=rg
 alias ag=rg
