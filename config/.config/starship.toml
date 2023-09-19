@@ -17,7 +17,7 @@ error_symbol = "[%](#CC6666 bold)"
 [directory]
 format = '[$path]($style) [$read_only]($read_only_style)'
 style = '#81A2BE bold'
-read_only = 'read_only'
+read_only = 'read only'
 read_only_style = '#CC6666 bold'
 truncation_length = 100
 truncate_to_repo = false
