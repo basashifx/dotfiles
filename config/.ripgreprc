@@ -1,0 +1,10 @@
+--max-columns=256
+--max-columns-preview
+
+# 隠しファイルや圧縮ファイルを検索対象にする
+--hidden
+--search-zip
+--max-filesize=10M
+
+# minified file を除外する
+--type-not=minified

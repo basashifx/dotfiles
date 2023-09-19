@@ -14,6 +14,8 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#969896"
 
 export ENHANCD_FILTER="fzf --preview 'ls -lah {}' --preview-window right,50% --height 50% --reverse --ansi"
 
+export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # ref: https://github.com/Songmu/ghq-handbook/blob/master/ja/05-command-list.md

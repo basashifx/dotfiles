@@ -2,6 +2,7 @@ config '.config/karabiner/karabiner.json'
 config '.curlrc'
 config '.fzf.zsh'
 config '.hushlogin'
+config '.ripgreprc'
 config '.wgetrc'
 config '.terraformrc'
 
