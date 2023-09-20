@@ -157,11 +157,11 @@ alias dp='docker ps'
 alias dr='docker rm -f'
 alias de='docker exec -it'
 alias di='docker images'
-alias gore='gore -autoimport'
 alias aldlg='aws logs describe-log-groups --query "logGroups[].[logGroupName]" --output text'
 alias gupdate='ghq list | grep github.com | ghq get --update --parallel'
 alias bat='bat --paging=never'
 alias ppath='echo $PATH | tr ":" "\n"'
+alias al='alias | fzf'
 alias cat=ccat
 alias ack=rg
 alias ag=rg
