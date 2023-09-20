@@ -38,9 +38,11 @@
 	diff = delta
 [delta]
 	side-by-side = true
-	line-numbers = true
 	navigate = true
 	keep-plus-minus-markers = true
+	dark = true
+	line-numbers = true
+	line-numbers-zero-style = "#C5C8C6"
 	syntax-theme = Monokai Extended
 [interactive]
 	diffFilter = delta --color-only
