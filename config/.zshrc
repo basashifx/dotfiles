@@ -45,5 +45,20 @@ function fzf-git-add() {
 }
 alias fga=fzf-git-add
 
+function fzf-git-restore() {
+    local selected=$(unbuffer git status --short | fzf --preview="echo {} | awk '{print \$2}' | xargs git diff --color" \
+        --preview-window right,50% --height 30% --reverse --multi --ansi | awk '{print $2}')
+
+    if [ -n "$selected" ]; then
+        local files=""
+        while IFS= read -r line; do
+            files="$files \"$line\""
+        done <<< "$selected"
+        eval git restore $files
+        echo "git restore $files"
+    fi
+}
+alias fgr=fzf-git-restore
+
 source $HOME/.zshrc.alias
 source $HOME/.zshrc.local
