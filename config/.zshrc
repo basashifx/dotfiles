@@ -12,7 +12,7 @@ export SAVEHIST=1000000
 
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#969896"
 
-export ENHANCD_FILTER="fzf --preview 'ls -lah {}' --preview-window right,50% --height 50% --reverse --ansi"
+export ENHANCD_FILTER="fzf --preview 'ls -lah {}' --preview-window right,50% --height 30% --reverse --ansi"
 
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 
@@ -20,7 +20,7 @@ export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 
 # ref: https://github.com/Songmu/ghq-handbook/blob/master/ja/05-command-list.md
 function fzf-cd-ghq () {
-    local repo=$(ghq list | fzf --height 50% --reverse --ansi)
+    local repo=$(ghq list | fzf --height 30% --reverse --ansi)
     if [ -n "$repo" ]; then
         repo=$(ghq list --full-path --exact $repo)
         BUFFER="cd ${repo}"
@@ -32,7 +32,7 @@ bindkey '^]' fzf-cd-ghq
 
 function fzf-git-add() {
     local selected=$(unbuffer git status --short | fzf --preview="echo {} | awk '{print \$2}' | xargs git diff --color" \
-        --preview-window right,50% --height 50% --reverse --multi --ansi | awk '{print $2}')
+        --preview-window right,50% --height 30% --reverse --multi --ansi | awk '{print $2}')
 
     if [ -n "$selected" ]; then
         local files=""
