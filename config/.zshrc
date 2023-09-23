@@ -10,7 +10,7 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#969896"
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
 export FZF_DEFAULT_OPTS='--height 40% --reverse'
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
-export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {}' --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+export FZF_CTRL_T_OPTS="--preview 'bat --number --color=always {}' --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 
 export ENHANCD_FILTER="fzf --preview 'ls -lah {}' --preview-window right,50%"
 
@@ -38,7 +38,7 @@ bindkey '^]' fzf-cd-ghq
 
 # ref: https://github.com/junegunn/fzf/wiki/examples#opening-files
 function fzf-open() {
-  IFS=$'\n' out=("$(fzf --preview 'bat -n --color=always {}' --bind 'ctrl-/:change-preview-window(down|hidden|)' --query="$1" --exit-0 --expect=ctrl-o,ctrl-e)")
+  IFS=$'\n' out=("$(fzf --preview 'bat --number --color=always {}' --bind 'ctrl-/:change-preview-window(down|hidden|)' --query="$1" --exit-0 --expect=ctrl-o,ctrl-e)")
   key=$(head -1 <<< "$out")
   file=$(head -2 <<< "$out" | tail -1)
   if [ -n "$file" ]; then

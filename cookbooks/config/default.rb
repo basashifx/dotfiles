@@ -1,3 +1,4 @@
+config '.config/bat/config'
 config '.config/htop/htoprc'
 config '.config/karabiner/karabiner.json'
 config '.curlrc'
