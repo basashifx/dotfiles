@@ -168,4 +168,3 @@ alias al='alias | fzf'
 alias ack=rg
 alias ag=rg
 alias peco=fzf
-
