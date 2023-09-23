@@ -36,20 +36,28 @@ function fzf-cd-ghq () {
 zle -N fzf-cd-ghq
 bindkey '^]' fzf-cd-ghq
 
-# ref: https://blog.tsub.me/post/move-from-peco-to-fzf/
-function fzf-git-branch() {
-  local selected_branch=$(git for-each-ref --format='%(refname)' --sort=-committerdate refs/heads | perl -pne 's{^refs/heads/}{}' | \
-    fzf --query "$LBUFFER")
-
-  if [ -n "$selected_branch" ]; then
-    BUFFER="git switch ${selected_branch}"
-    zle accept-line
+# ref: https://github.com/junegunn/fzf/wiki/examples#opening-files
+function fzf-open() {
+  IFS=$'\n' out=("$(fzf --preview 'bat -n --color=always {}' --bind 'ctrl-/:change-preview-window(down|hidden|)' --query="$1" --exit-0 --expect=ctrl-o,ctrl-e)")
+  key=$(head -1 <<< "$out")
+  file=$(head -2 <<< "$out" | tail -1)
+  if [ -n "$file" ]; then
+    [ "$key" = ctrl-o ] && open "$file" || ${EDITOR:-vim} "$file"
   fi
-
-  zle reset-prompt
 }
-zle -N fzf-git-branch
-bindkey "^b" fzf-git-branch
+alias fga=fo
+
+# ref: https://github.com/junegunn/fzf/wiki/examples#git
+function fzf-git-switch() {
+  local branches branch
+  branches=$(git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)") &&
+  branch=$(echo "$branches" |
+           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+  git switch $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+  zle accept-line
+}
+zle -N fzf-git-switch
+bindkey "^b" fzf-git-switch
 
 function fzf-git-add() {
     local selected=$(unbuffer git status --short | fzf --preview="echo {} | awk '{print \$2}' | xargs git diff --color" \
