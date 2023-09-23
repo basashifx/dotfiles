@@ -1,10 +1,5 @@
 export PATH=/opt/homebrew/bin:/opt/homebrew/opt/curl/bin:/usr/local/bin:$PATH:/Applications/Xcode.app/Contents//Developer/usr/bin
 
-eval "$(sheldon source)"
-eval "$(starship init zsh)"
-eval "$(anyenv init - zsh)"
-eval "$(direnv hook zsh)"
-
 export EDITOR=vim
 
 export HISTSIZE=100000
@@ -20,6 +15,11 @@ export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {}' --bind 'ctrl-/:chan
 export ENHANCD_FILTER="fzf --preview 'ls -lah {}' --preview-window right,50%"
 
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
+
+eval "$(sheldon source)"
+eval "$(starship init zsh)"
+eval "$(anyenv init - zsh)"
+eval "$(direnv hook zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 bindkey "^f" fzf-file-widget
@@ -38,7 +38,8 @@ bindkey '^]' fzf-cd-ghq
 
 # ref: https://blog.tsub.me/post/move-from-peco-to-fzf/
 function fzf-git-branch() {
-  local selected_branch=$(git for-each-ref --format='%(refname)' --sort=-committerdate refs/heads | perl -pne 's{^refs/heads/}{}' | fzf --query "$LBUFFER")
+  local selected_branch=$(git for-each-ref --format='%(refname)' --sort=-committerdate refs/heads | perl -pne 's{^refs/heads/}{}' | \
+    fzf --query "$LBUFFER")
 
   if [ -n "$selected_branch" ]; then
     BUFFER="git checkout ${selected_branch}"
