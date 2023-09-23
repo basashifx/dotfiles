@@ -143,6 +143,7 @@ alias t='cd ~/tmp'
 alias o='open'
 alias grepi='grep -i'
 alias tree='tree -N'
+alias cat='bat --style=plain'
 alias rgc='rg --context 2'
 alias rgi='rg --ignore-case'
 alias rgs='rg --smart-case'
@@ -163,7 +164,6 @@ alias gupdate='ghq list | grep github.com | ghq get --update --parallel'
 alias bat='bat --paging=never'
 alias ppath='echo $PATH | tr ":" "\n"'
 alias al='alias | fzf'
-alias cat=ccat
 alias ack=rg
 alias ag=rg
 alias peco=fzf
