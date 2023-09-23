@@ -43,7 +43,7 @@
 	dark = true
 	line-numbers = true
 	line-numbers-zero-style = "#C5C8C6"
-	syntax-theme = Monokai Extended
+	syntax-theme = ansi
 [interactive]
 	diffFilter = delta --color-only
 [ghq]
