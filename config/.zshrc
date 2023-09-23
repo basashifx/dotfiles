@@ -22,7 +22,6 @@ export ENHANCD_FILTER="fzf --preview 'ls -lah {}' --preview-window right,50%"
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 bindkey "^f" fzf-file-widget
 
 # ref: https://github.com/Songmu/ghq-handbook/blob/master/ja/05-command-list.md
