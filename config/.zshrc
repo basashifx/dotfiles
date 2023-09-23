@@ -42,7 +42,7 @@ function fzf-git-branch() {
     fzf --query "$LBUFFER")
 
   if [ -n "$selected_branch" ]; then
-    BUFFER="git checkout ${selected_branch}"
+    BUFFER="git switch ${selected_branch}"
     zle accept-line
   fi
 
