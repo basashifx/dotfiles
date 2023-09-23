@@ -12,7 +12,10 @@ export SAVEHIST=1000000
 
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#969896"
 
-export FZF_DEFAULT_OPTS='--height 30% --reverse --ansi'
+export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
+export FZF_DEFAULT_OPTS='--height 40% --reverse'
+export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
+export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {}' --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 
 export ENHANCD_FILTER="fzf --preview 'ls -lah {}' --preview-window right,50%"
 
@@ -20,9 +23,11 @@ export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+bindkey "^f" fzf-file-widget
+
 # ref: https://github.com/Songmu/ghq-handbook/blob/master/ja/05-command-list.md
 function fzf-cd-ghq () {
-    local repo=$(ghq list | fzf)
+    local repo=$(ghq list | fzf --query "$LBUFFER")
     if [ -n "$repo" ]; then
         repo=$(ghq list --full-path --exact $repo)
         BUFFER="cd ${repo}"
@@ -32,9 +37,23 @@ function fzf-cd-ghq () {
 zle -N fzf-cd-ghq
 bindkey '^]' fzf-cd-ghq
 
+# ref: https://blog.tsub.me/post/move-from-peco-to-fzf/
+function fzf-git-branch() {
+  local selected_branch=$(git for-each-ref --format='%(refname)' --sort=-committerdate refs/heads | perl -pne 's{^refs/heads/}{}' | fzf --query "$LBUFFER")
+
+  if [ -n "$selected_branch" ]; then
+    BUFFER="git checkout ${selected_branch}"
+    zle accept-line
+  fi
+
+  zle reset-prompt
+}
+zle -N fzf-git-branch
+bindkey "^b" fzf-git-branch
+
 function fzf-git-add() {
     local selected=$(unbuffer git status --short | fzf --preview="echo {} | awk '{print \$2}' | xargs git diff --color" \
-        --preview-window right,50% --multi | awk '{print $2}')
+        --preview-window right,50% --multi --ansi | awk '{print $2}')
 
     if [ -n "$selected" ]; then
         local files=""
@@ -49,7 +68,7 @@ alias fga=fzf-git-add
 
 function fzf-git-restore() {
     local selected=$(unbuffer git status --short | fzf --preview="echo {} | awk '{print \$2}' | xargs git diff --color" \
-        --preview-window right,50% --multi | awk '{print $2}')
+        --preview-window right,50% --multi --ansi | awk '{print $2}')
 
     if [ -n "$selected" ]; then
         local files=""
