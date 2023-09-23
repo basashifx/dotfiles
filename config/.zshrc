@@ -45,7 +45,7 @@ function fzf-open() {
     [ "$key" = ctrl-o ] && open "$file" || ${EDITOR:-vim} "$file"
   fi
 }
-alias fga=fo
+alias fo=fzf-open
 
 # ref: https://github.com/junegunn/fzf/wiki/examples#git
 function fzf-git-switch() {
