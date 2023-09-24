@@ -12,7 +12,10 @@ export FZF_DEFAULT_OPTS='--height 40% --reverse'
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
 export FZF_CTRL_T_OPTS="--preview 'bat --number --color=always {}' --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 
-export ENHANCD_FILTER="fzf --preview 'ls -lah {}' --preview-window right,50%"
+export ENHANCD_FILTER="fzf --preview 'eza --long --all --git --color=always {}' --preview-window right,50%"
+
+# eza でも使える
+export EXA_COLORS="xx=37"
 
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 

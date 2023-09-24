@@ -16,6 +16,7 @@ brew "direnv"
 brew "docker-compose"
 brew "duf"
 brew "expect" # unbuffer に必要 ref: https://dev.classmethod.jp/articles/fzf-original-app-for-git-add/
+brew "eza"
 brew "fd"
 brew "fujiwara/tap/aswrap"
 brew "fujiwara/tap/ecsta"
