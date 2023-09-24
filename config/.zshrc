@@ -13,6 +13,7 @@ export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap 
 export FZF_CTRL_T_OPTS="--preview 'bat --number --color=always {}' --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 
 export ENHANCD_FILTER="fzf --preview 'eza --long --all --git --color=always {}' --preview-window right,50%"
+export ENHANCD_HYPHEN_NUM=20
 
 # eza でも使える
 export EXA_COLORS="xx=37"
