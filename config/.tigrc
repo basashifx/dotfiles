@@ -1,0 +1,6 @@
+set vertical-split = false
+
+# main view に commit ID を表示する
+set main-view = id date author commit-title:graph=yes,refs=yes
+
+bind generic i @zsh -c "echo -n '%(commit)' | pbcopy"

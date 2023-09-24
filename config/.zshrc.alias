@@ -164,6 +164,7 @@ alias fdi='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git --ign
 alias fda='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git --absolute-path'
 alias fdd='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git --max-depth'
 alias diff='colordiff --unified'
+alias tigb='tig blame'
 alias rm='trash -F'
 alias dp='docker ps'
 alias dr='docker rm -f'
