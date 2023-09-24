@@ -61,7 +61,7 @@ bindkey "^b" fzf-git-switch
 
 function fzf-git-add() {
     local selected=$(unbuffer git status --short | fzf --preview="echo {} | awk '{print \$2}' | xargs git diff --color" \
-        --preview-window right,50% --multi --ansi | awk '{print $2}')
+        --preview-window right,50% --height 70% --multi --ansi | awk '{print $2}')
 
     if [ -n "$selected" ]; then
         local files=""
@@ -76,7 +76,7 @@ alias fga=fzf-git-add
 
 function fzf-git-restore() {
     local selected=$(unbuffer git status --short | fzf --preview="echo {} | awk '{print \$2}' | xargs git diff --color" \
-        --preview-window right,50% --multi --ansi | awk '{print $2}')
+        --preview-window right,50% --height 70% --multi --ansi | awk '{print $2}')
 
     if [ -n "$selected" ]; then
         local files=""
