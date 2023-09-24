@@ -92,5 +92,16 @@ function fzf-git-restore() {
 }
 alias fgr=fzf-git-restore
 
+autoload -Uz compinit && compinit
+
+# 余計な空白は詰めて記録する
+setopt hist_reduce_blanks
+
+# スペースで始まるコマンドは history に追加しない
+setopt hist_ignore_space
+
+# コマンドをすぐに history に追記する
+setopt inc_append_history
+
 source $HOME/.zshrc.alias
 source $HOME/.zshrc.local
