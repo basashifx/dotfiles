@@ -22,7 +22,6 @@ export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 
 eval "$(sheldon source)"
 eval "$(starship init zsh)"
-# eval "$(anyenv init - zsh)"
 eval "$(direnv hook zsh)"
 
 # 初回は asdf で go が入ってないので go があるか確認する

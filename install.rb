@@ -9,12 +9,11 @@ include_recipe 'helper'
 
 include_cookbook 'homebrew'
 
-# include_cookbook 'anyenv'
 include_cookbook 'config'
 include_cookbook 'git'
-include_cookbook 'go'
 include_cookbook 'ssh'
 include_cookbook 'zsh'
 
 include_cookbook 'asdf'
+include_cookbook 'go'
 include_cookbook 'macos'

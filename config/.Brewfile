@@ -6,7 +6,6 @@ tap "kayac/tap"
 tap "knqyf263/utern"
 tap "minamijoyo/tfschema"
 
-brew "anyenv"
 brew "awscli"
 brew "bat"
 brew "colordiff"
