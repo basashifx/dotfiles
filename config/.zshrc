@@ -22,8 +22,14 @@ export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 
 eval "$(sheldon source)"
 eval "$(starship init zsh)"
-eval "$(anyenv init - zsh)"
+# eval "$(anyenv init - zsh)"
 eval "$(direnv hook zsh)"
+
+# 初回は asdf で go が入ってないので go があるか確認する
+if type go > /dev/null 2>&1; then
+    export PATH=$(go env GOPATH)/bin:$PATH
+fi
+fpath=(${ASDF_DIR}/completions $fpath)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 bindkey "^f" fzf-file-widget

@@ -11,6 +11,18 @@ define :config do
   end
 end
 
+define :install_asdf, url: nil, version: nil do
+  execute "asdf plugin add #{params[:name]} #{params[:url]}" do
+    not_if "test -d $HOME/.asdf/plugins/#{params[:name]}"
+  end
+
+  execute "asdf install #{params[:name]} #{params[:version]}" do
+    not_if "asdf list #{params[:name]} #{params[:version]}"
+  end
+
+  execute "asdf global #{params[:name]} #{params[:version]}"
+end
+
 define :install_env, version: nil do
   # トレンドマイクロが入ってると rbenv/pyenv install はコケる
   if (params[:name] == 'rbenv' || params[:name] == 'pyenv') && system('test -d /Applications/TrendMicroSecurity.app')

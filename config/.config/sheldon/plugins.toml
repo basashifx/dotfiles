@@ -19,5 +19,8 @@ apply = ['defer']
 github = 'babarot/enhancd'
 use = ['init.sh']
 
+[plugins.asdf]
+github = 'asdf-vm/asdf'
+
 [templates]
 defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
