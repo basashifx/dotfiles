@@ -1,6 +1,7 @@
 config '.git-templates'
 config '.gitconfig'
 config '.gitignore'
+config '.tigrc'
 
 file File.join(ENV['HOME'], '.gitconfig.local')
 

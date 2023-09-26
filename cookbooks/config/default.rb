@@ -6,7 +6,6 @@ config '.fzf.zsh'
 config '.hushlogin'
 config '.ripgreprc'
 config '.terraformrc'
-config '.tigrc'
 config '.wgetrc'
 
 link File.join(ENV['HOME'], 'Library/Preferences/com.googlecode.iterm2.plist') do
