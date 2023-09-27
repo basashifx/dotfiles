@@ -14,9 +14,63 @@ execute 'killall Finder' do
   action :nothing
 end
 
+execute 'デスクトップとDock->拡大 を最大にする' do
+  command 'defaults write com.apple.dock largesize -int 128'
+  not_if 'defaults read com.apple.dock largesize | grep 128'
+  notifies :run, 'execute[killall Dock]'
+end
+
 execute 'デスクトップとDock->Dockを自動的に表示/非表示 を有効にする' do
   command 'defaults write com.apple.dock autohide -int 1'
   not_if 'defaults read com.apple.dock autohide | grep 1'
+  notifies :run, 'execute[killall Dock]'
+end
+
+execute 'デスクトップとDock->ホットコーナー->左上(corner) を無効にする' do
+  command 'defaults write com.apple.dock wvous-tl-corner -int 0'
+  not_if 'defaults read com.apple.dock wvous-tl-corner | grep 0'
+  notifies :run, 'execute[killall Dock]'
+end
+
+execute 'デスクトップとDock->ホットコーナー->左上(modifier) を無効にする' do
+  command 'defaults write com.apple.dock wvous-tl-modifier -int 0'
+  not_if 'defaults read com.apple.dock wvous-tl-modifier | grep 0'
+  notifies :run, 'execute[killall Dock]'
+end
+
+execute 'デスクトップとDock->ホットコーナー->右上(corner) を無効にする' do
+  command 'defaults write com.apple.dock wvous-tr-corner -int 0'
+  not_if 'defaults read com.apple.dock wvous-tr-corner | grep 0'
+  notifies :run, 'execute[killall Dock]'
+end
+
+execute 'デスクトップとDock->ホットコーナー->右上(modifier) を無効にする' do
+  command 'defaults write com.apple.dock wvous-tr-modifier -int 0'
+  not_if 'defaults read com.apple.dock wvous-tr-modifier | grep 0'
+  notifies :run, 'execute[killall Dock]'
+end
+
+execute 'デスクトップとDock->ホットコーナー->左下(corner) を無効にする' do
+  command 'defaults write com.apple.dock wvous-bl-corner -int 0'
+  not_if 'defaults read com.apple.dock wvous-bl-corner | grep 0'
+  notifies :run, 'execute[killall Dock]'
+end
+
+execute 'デスクトップとDock->ホットコーナー->左下(modifier) を無効にする' do
+  command 'defaults write com.apple.dock wvous-bl-modifier -int 0'
+  not_if 'defaults read com.apple.dock wvous-bl-modifier | grep 0'
+  notifies :run, 'execute[killall Dock]'
+end
+
+execute 'デスクトップとDock->ホットコーナー->右下(corner) を無効にする' do
+  command 'defaults write com.apple.dock wvous-br-corner -int 0'
+  not_if 'defaults read com.apple.dock wvous-br-corner | grep 0'
+  notifies :run, 'execute[killall Dock]'
+end
+
+execute 'デスクトップとDock->ホットコーナー->右下(modifier) を無効にする' do
+  command 'defaults write com.apple.dock wvous-br-modifier -int 0'
+  not_if 'defaults read com.apple.dock wvous-br-modifier | grep 0'
   notifies :run, 'execute[killall Dock]'
 end
 
