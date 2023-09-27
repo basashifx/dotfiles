@@ -33,3 +33,123 @@ execute 'キーボード->リピート入力認識までの時間 を最短に�
   command 'defaults write -g InitialKeyRepeat -int 15'
   not_if 'defaults read -g InitialKeyRepeat | grep 15'
 end
+
+execute 'キーボード->キーボードショートカット->Mission Control->Mission Control(32) に F12(111) を設定する' do
+  command 'defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 32 "
+<dict>
+    <key>enabled</key>
+    <true/>
+    <key>value</key>
+    <dict>
+        <key>parameters</key>
+        <array>
+            <integer>65535</integer>
+            <integer>111</integer>
+            <integer>8388608</integer>
+        </array>
+        <key>type</key>
+        <string>standard</string>
+    </dict>
+</dict>"'
+  not_if 'defaults read com.apple.symbolichotkeys AppleSymbolicHotKeys | rg --after-context 10 "\s+32\s=\s" - | rg "111," -'
+end
+
+execute 'キーボード->キーボードショートカット->Mission Control->Mission Control(34) に F12(111) を設定する' do
+  command 'defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 34 "
+<dict>
+    <key>enabled</key>
+    <true/>
+    <key>value</key>
+    <dict>
+        <key>parameters</key>
+        <array>
+            <integer>65535</integer>
+            <integer>111</integer>
+            <integer>8519680</integer>
+        </array>
+        <key>type</key>
+        <string>standard</string>
+    </dict>
+</dict>"'
+  not_if 'defaults read com.apple.symbolichotkeys AppleSymbolicHotKeys | rg --after-context 10 "\s+34\s=\s" - | rg "111," -'
+end
+
+execute 'キーボード->キーボードショートカット->Mission Control->アプリケーションウインドウ(33) を無効にする' do
+  command 'defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 33 "
+<dict>
+    <key>enabled</key>
+    <false/>
+    <key>value</key>
+    <dict>
+        <key>parameters</key>
+        <array>
+            <integer>65535</integer>
+            <integer>109</integer>
+            <integer>8388608</integer>
+        </array>
+        <key>type</key>
+        <string>standard</string>
+    </dict>
+</dict>"'
+  not_if 'defaults read com.apple.symbolichotkeys AppleSymbolicHotKeys | rg --after-context 2 "\s+33\s=\s" - | rg "enabled\s=\s0" -'
+end
+
+execute 'キーボード->キーボードショートカット->Mission Control->アプリケーションウインドウ(35) を無効にする' do
+  command 'defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 35 "
+<dict>
+    <key>enabled</key>
+    <false/>
+    <key>value</key>
+    <dict>
+        <key>parameters</key>
+        <array>
+            <integer>65535</integer>
+            <integer>109</integer>
+            <integer>8519680</integer>
+        </array>
+        <key>type</key>
+        <string>standard</string>
+    </dict>
+</dict>"'
+  not_if 'defaults read com.apple.symbolichotkeys AppleSymbolicHotKeys | rg --after-context 2 "\s+35\s=\s" - | rg "enabled\s=\s0" -'
+end
+
+execute 'キーボード->キーボードショートカット->キーボード->前の入力ソースを選択(60) を無効にする' do
+  command 'defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 60 "
+<dict>
+    <key>enabled</key>
+    <false/>
+    <key>value</key>
+    <dict>
+        <key>parameters</key>
+        <array>
+            <integer>32</integer>
+            <integer>49</integer>
+            <integer>1048576</integer>
+        </array>
+        <key>type</key>
+        <string>standard</string>
+    </dict>
+</dict>"'
+  not_if 'defaults read com.apple.symbolichotkeys AppleSymbolicHotKeys | rg --after-context 2 "\s+60\s=\s" - | rg "enabled\s=\s0" -'
+end
+
+execute 'キーボード->キーボードショートカット->キーボード->入力メニューの次のソースを選択(61) を無効にする' do
+  command 'defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 61 "
+<dict>
+    <key>enabled</key>
+    <false/>
+    <key>value</key>
+    <dict>
+        <key>parameters</key>
+        <array>
+            <integer>32</integer>
+            <integer>49</integer>
+            <integer>1572864</integer>
+        </array>
+        <key>type</key>
+        <string>standard</string>
+    </dict>
+</dict>"'
+  not_if 'defaults read com.apple.symbolichotkeys AppleSymbolicHotKeys | rg --after-context 2 "\s+61\s=\s" - | rg "enabled\s=\s0" -'
+end
