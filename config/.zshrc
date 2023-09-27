@@ -26,7 +26,10 @@ eval "$(direnv hook zsh)"
 
 # 初回は asdf で go が入ってないので go があるか確認する
 if type go > /dev/null 2>&1; then
+    export GOPATH=$HOME/go
+    export CGO_ENABLED=0
     export PATH=$(go env GOPATH)/bin:$PATH
+    export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 fi
 fpath=(${ASDF_DIR}/completions $fpath)
 
