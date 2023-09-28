@@ -1,3 +1,9 @@
+execute 'Finder->新規Finderウインドウで次を表示 をホームディレクトリにする' do
+  command 'defaults write com.apple.finder NewWindowTarget -string "PfHm"'
+  not_if 'defaults read com.apple.finder NewWindowTarget | grep PfHm'
+  notifies :run, 'execute[killall Finder]'
+end
+
 execute 'Finder->すべてのファイル名拡張子を表示 を有効にする' do
   command 'defaults write NSGlobalDomain AppleShowAllExtensions -bool true'
   not_if 'defaults read NSGlobalDomain AppleShowAllExtensions | grep 1'
@@ -10,8 +16,35 @@ execute 'Finder 隠しファイルを表示する' do
   notifies :run, 'execute[killall Finder]'
 end
 
+execute 'Finder 常にリストで表示する' do
+  command 'defaults write com.apple.Finder FXPreferredViewStyle Nlsv'
+  not_if 'defaults read com.apple.Finder FXPreferredViewStyle | grep Nlsv'
+  notifies :run, 'execute[killall Finder]'
+end
+
 execute 'killall Finder' do
   action :nothing
+end
+
+execute 'スクリーンショットを Downloads フォルダに保存する' do
+  command 'defaults write com.apple.screencapture location ~/Downloads'
+  not_if 'defaults read com.apple.screencapture location | grep "~/Downloads"'
+  notifies :run, 'execute[killall SystemUIServer]'
+end
+
+execute 'killall SystemUIServer' do
+  action :nothing
+end
+
+# 自信ない ref: https://baqamore.hatenablog.com/entry/2014/12/25/070232#f-1799cd1d
+execute '外観->外観モード をダークにする' do
+  command 'defaults write -g AppleInterfaceStyle -string "Dark"'
+  not_if 'defaults read -g AppleInterfaceStyle | grep Dark'
+end
+
+execute 'コントロールセンター->バッテリー 割合(%)を表示する' do
+  command 'defaults write com.apple.menuextra.battery ShowPercent -string "YES"'
+  not_if 'defaults read com.apple.menuextra.battery ShowPercent | grep YES'
 end
 
 execute 'デスクトップとDock->拡大 を最大にする' do
@@ -168,7 +201,7 @@ execute 'キーボード->キーボードショートカット->Mission Control-
   not_if 'defaults read com.apple.symbolichotkeys AppleSymbolicHotKeys | rg --after-context 2 "\s+35\s=\s" - | rg "enabled\s=\s0" -'
 end
 
-execute 'キーボード->キーボードショートカット->キーボード->前の入力ソースを選択(60) を無効にする' do
+execute 'キーボード->キーボードショートカット->入力ソース->前の入力ソースを選択(60) を無効にする' do
   command 'defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 60 "
 <dict>
     <key>enabled</key>
@@ -188,7 +221,7 @@ execute 'キーボード->キーボードショートカット->キーボード-
   not_if 'defaults read com.apple.symbolichotkeys AppleSymbolicHotKeys | rg --after-context 2 "\s+60\s=\s" - | rg "enabled\s=\s0" -'
 end
 
-execute 'キーボード->キーボードショートカット->キーボード->入力メニューの次のソースを選択(61) を無効にする' do
+execute 'キーボード->キーボードショートカット->入力ソース->入力メニューの次のソースを選択(61) を無効にする' do
   command 'defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 61 "
 <dict>
     <key>enabled</key>
@@ -206,4 +239,29 @@ execute 'キーボード->キーボードショートカット->キーボード-
     </dict>
 </dict>"'
   not_if 'defaults read com.apple.symbolichotkeys AppleSymbolicHotKeys | rg --after-context 2 "\s+61\s=\s" - | rg "enabled\s=\s0" -'
+end
+
+execute 'キーボード->キーボードショートカット->Spotlight->Spotlight検索を表示(64) を無効にする' do
+  command 'defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 "
+<dict>
+    <key>enabled</key>
+    <false/>
+    <key>value</key>
+    <dict>
+        <key>parameters</key>
+        <array>
+            <integer>65535</integer>
+            <integer>49</integer>
+            <integer>262144</integer>
+        </array>
+        <key>type</key>
+        <string>standard</string>
+    </dict>
+</dict>"'
+  not_if 'defaults read com.apple.symbolichotkeys AppleSymbolicHotKeys | rg --after-context 2 "\s+64\s=\s" - | rg "enabled\s=\s0" -'
+end
+
+execute 'キーボード->キーボードショートカット->ファンクションキー->F1、F2などのキーを標準のファンクションキーとして使用 を有効にする ' do
+  command 'defaults write -g com.apple.keyboard.fnState -int 1'
+  not_if 'defaults read -g com.apple.keyboard.fnState | grep 1'
 end
