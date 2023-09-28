@@ -1,3 +1,9 @@
+# 以下は手動
+#
+# FileVault を有効にする
+# ログインパスワードの変更
+# Apple Watch で Mac のロックを解除する
+
 execute 'Finder->新規Finderウインドウで次を表示 をホームディレクトリにする' do
   command 'defaults write com.apple.finder NewWindowTarget -string "PfHm"'
   not_if 'defaults read com.apple.finder NewWindowTarget | grep PfHm'
@@ -42,9 +48,29 @@ execute '外観->外観モード をダークにする' do
   not_if 'defaults read -g AppleInterfaceStyle | grep Dark'
 end
 
-execute 'コントロールセンター->バッテリー 割合(%)を表示する' do
+execute '外観->ウインドウで壁紙の色合い調整を許可 を無効にする(無効だけど1)' do
+  command 'defaults read -g AppleReduceDesktopTinting -int 1'
+  not_if 'defaults read -g AppleReduceDesktopTinting | grep 1'
+end
+
+execute 'コントロールセンター->Bluetooth をメニューバーに表示にする' do
+  command 'defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.bluetooth" -int 1'
+  not_if 'defaults read com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.bluetooth" | grep 1'
+end
+
+execute 'コントロールセンター->サウンド をメニューバーに常に表示にする' do
+  command 'defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.volume" -int 1'
+  not_if 'defaults read com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.volume" | grep 1'
+end
+
+execute 'コントロールセンター->バッテリー->割合(%)を表示 を有効にする' do
   command 'defaults write com.apple.menuextra.battery ShowPercent -string "YES"'
   not_if 'defaults read com.apple.menuextra.battery ShowPercent | grep YES'
+end
+
+execute 'コントロールセンター->Time Machine をメニューバーに表示する' do
+  command 'defaults write com.apple.systemuiserver "NSStatusItem Preferred Position com.apple.menuextra.TimeMachine" -int 498'
+  not_if 'defaults read com.apple.systemuiserver "NSStatusItem Preferred Position com.apple.menuextra.TimeMachine" | grep 498'
 end
 
 execute 'デスクトップとDock->拡大 を最大にする' do
@@ -119,6 +145,11 @@ end
 execute 'キーボード->リピート入力認識までの時間 を最短にする' do
   command 'defaults write -g InitialKeyRepeat -int 15'
   not_if 'defaults read -g InitialKeyRepeat | grep 15'
+end
+
+execute 'キーボード->キーボードナビゲーション を有効にする' do
+  command 'defaults write NSGlobalDomain AppleKeyboardUIMode -int 2'
+  not_if 'defaults read NSGlobalDomain AppleKeyboardUIMode | grep 2'
 end
 
 execute 'キーボード->キーボードショートカット->Mission Control->Mission Control(32) に F12(111) を設定する' do
