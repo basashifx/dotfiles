@@ -532,7 +532,30 @@ execute 'キーボード->キーボードショートカット->アプリケー�
   not_if 'defaults read -g NSUserKeyEquivalents | grep -F "\\\\\\\\U307b\\\\\\\\U304b\\\\\\\\U3092\\\\\\\\U96a0\\\\\\\\U3059"'
 end
 
-execute 'キーボード->キーボードショートカット->ファンクションキー->F1、F2などのキーを標準のファンクションキーとして使用 を有効にする ' do
+execute 'キーボード->キーボードショートカット->ファンクションキー->F1、F2などのキーを標準のファンクションキーとして使用 を有効にする' do
   command 'defaults write -g com.apple.keyboard.fnState -int 1'
   not_if 'defaults read -g com.apple.keyboard.fnState | grep 1'
+end
+
+execute 'キーボード->入力ソース->ひらがな(Google)/英数(Google) を追加する' do
+  command 'defaults write com.apple.inputsources \'
+{
+    AppleEnabledThirdPartyInputSources = (
+        {
+            "Bundle ID" = "com.google.inputmethod.Japanese";
+            InputSourceKind = "Keyboard Input Method";
+        },
+        {
+            "Bundle ID" = "com.google.inputmethod.Japanese";
+            "Input Mode" = "com.apple.inputmethod.Roman";
+            InputSourceKind = "Input Mode";
+        },
+        {
+            "Bundle ID" = "com.google.inputmethod.Japanese";
+            "Input Mode" = "com.apple.inputmethod.Japanese";
+            InputSourceKind = "Input Mode";
+        }
+    );
+}\';'
+  not_if 'defaults read com.apple.inputsources AppleEnabledThirdPartyInputSources | grep com.google.inputmethod.Japanese'
 end
