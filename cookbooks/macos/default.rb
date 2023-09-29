@@ -232,6 +232,226 @@ execute 'キーボード->キーボードショートカット->Mission Control-
   not_if 'defaults read com.apple.symbolichotkeys AppleSymbolicHotKeys | rg --after-context 2 "\s+35\s=\s" - | rg "enabled\s=\s0" -'
 end
 
+execute 'キーボード->キーボードショートカット->Mission Control->左の操作スペースに移動(79) に Ctrl + Shift + U を設定する' do
+  command 'defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 79 "
+<dict>
+    <key>enabled</key>
+    <true/>
+    <key>value</key>
+    <dict>
+        <key>parameters</key>
+        <array>
+            <integer>117</integer>
+            <integer>32</integer>
+            <integer>393216</integer>
+        </array>
+        <key>type</key>
+        <string>standard</string>
+    </dict>
+</dict>"'
+  not_if 'defaults read com.apple.symbolichotkeys AppleSymbolicHotKeys | rg --after-context 10 "\s+79\s=\s" - | rg "32," -'
+end
+
+execute 'キーボード->キーボードショートカット->Mission Control->右の操作スペースに移動(81) に Ctrl + Shift + I を設定する' do
+  command 'defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 81 "
+<dict>
+    <key>enabled</key>
+    <true/>
+    <key>value</key>
+    <dict>
+        <key>parameters</key>
+        <array>
+            <integer>105</integer>
+            <integer>34</integer>
+            <integer>393216</integer>
+        </array>
+        <key>type</key>
+        <string>standard</string>
+    </dict>
+</dict>"'
+  not_if 'defaults read com.apple.symbolichotkeys AppleSymbolicHotKeys |  rg --after-context 10 "\s+81\s=\s" - | rg "34," -'
+end
+
+execute 'キーボード->キーボードショートカット->Mission Control->デスクトップ1へ切り替え(118) に Ctrl + 1 を設定する' do
+  command 'defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 118 "
+<dict>
+    <key>enabled</key>
+    <true/>
+    <key>value</key>
+    <dict>
+        <key>parameters</key>
+        <array>
+            <integer>49</integer>
+            <integer>18</integer>
+            <integer>262144</integer>
+        </array>
+        <key>type</key>
+        <string>standard</string>
+    </dict>
+</dict>"'
+  not_if 'defaults read com.apple.symbolichotkeys AppleSymbolicHotKeys |  rg --after-context 10 "\s+118\s=\s" - | rg "18," -'
+end
+
+execute 'キーボード->キーボードショートカット->Mission Control->デスクトップ2へ切り替え(119) に Ctrl + 2 を設定する' do
+  command 'defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 119 "
+<dict>
+    <key>enabled</key>
+    <true/>
+    <key>value</key>
+    <dict>
+        <key>parameters</key>
+        <array>
+            <integer>50</integer>
+            <integer>19</integer>
+            <integer>262144</integer>
+        </array>
+        <key>type</key>
+        <string>standard</string>
+    </dict>
+</dict>"'
+  not_if 'defaults read com.apple.symbolichotkeys AppleSymbolicHotKeys |  rg --after-context 10 "\s+119\s=\s" - | rg "19," -'
+end
+
+execute 'キーボード->キーボードショートカット->Mission Control->デスクトップ3へ切り替え(120) に Ctrl + 3 を設定する' do
+  command 'defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 120 "
+<dict>
+    <key>enabled</key>
+    <true/>
+    <key>value</key>
+    <dict>
+        <key>parameters</key>
+        <array>
+            <integer>51</integer>
+            <integer>20</integer>
+            <integer>262144</integer>
+        </array>
+        <key>type</key>
+        <string>standard</string>
+    </dict>
+</dict>"'
+  not_if 'defaults read com.apple.symbolichotkeys AppleSymbolicHotKeys |  rg --after-context 10 "\s+120\s=\s" - | rg "20," -'
+end
+
+execute 'キーボード->キーボードショートカット->Mission Control->デスクトップ4へ切り替え(121) に Ctrl + 4 を設定する' do
+  command 'defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 121 "
+<dict>
+    <key>enabled</key>
+    <true/>
+    <key>value</key>
+    <dict>
+        <key>parameters</key>
+        <array>
+            <integer>65535</integer>
+            <integer>21</integer>
+            <integer>262144</integer>
+        </array>
+        <key>type</key>
+        <string>standard</string>
+    </dict>
+</dict>"'
+  not_if 'defaults read com.apple.symbolichotkeys AppleSymbolicHotKeys |  rg --after-context 10 "\s+121\s=\s" - | rg "21," -'
+end
+
+execute 'キーボード->キーボードショートカット->Mission Control->デスクトップ5へ切り替え(122) に Ctrl + 5 を設定する' do
+  command 'defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 122 "
+<dict>
+    <key>enabled</key>
+    <true/>
+    <key>value</key>
+    <dict>
+        <key>parameters</key>
+        <array>
+            <integer>65535</integer>
+            <integer>23</integer>
+            <integer>262144</integer>
+        </array>
+        <key>type</key>
+        <string>standard</string>
+    </dict>
+</dict>"'
+  not_if 'defaults read com.apple.symbolichotkeys AppleSymbolicHotKeys |  rg --after-context 10 "\s+122\s=\s" - | rg "23," -'
+end
+
+execute 'キーボード->キーボードショートカット->Mission Control->デスクトップ6へ切り替え(123) に Ctrl + 6 を設定する' do
+  command 'defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 123 "
+<dict>
+    <key>enabled</key>
+    <true/>
+    <key>value</key>
+    <dict>
+        <key>parameters</key>
+        <array>
+            <integer>65535</integer>
+            <integer>22</integer>
+            <integer>262144</integer>
+        </array>
+        <key>type</key>
+        <string>standard</string>
+    </dict>
+</dict>"'
+  not_if 'defaults read com.apple.symbolichotkeys AppleSymbolicHotKeys |  rg --after-context 10 "\s+123\s=\s" - | rg "22," -'
+end
+
+execute 'キーボード->キーボードショートカット->Mission Control->デスクトップ7へ切り替え(124) に Ctrl + 7 を設定する' do
+  command 'defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 124 "
+<dict>
+    <key>enabled</key>
+    <true/>
+    <key>value</key>
+    <dict>
+        <key>parameters</key>
+        <array>
+            <integer>65535</integer>
+            <integer>26</integer>
+            <integer>262144</integer>
+        </array>
+        <key>type</key>
+        <string>standard</string>
+    </dict>
+</dict>"'
+  not_if 'defaults read com.apple.symbolichotkeys AppleSymbolicHotKeys |  rg --after-context 10 "\s+124\s=\s" - | rg "26," -'
+end
+
+execute 'キーボード->キーボードショートカット->Mission Control->デスクトップ8へ切り替え(125) に Ctrl + 8 を設定する' do
+  command 'defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 125 "
+<dict>
+    <key>enabled</key>
+    <true/>
+    <key>value</key>
+    <dict>
+        <key>parameters</key>
+        <array>
+            <integer>65535</integer>
+            <integer>28</integer>
+            <integer>262144</integer>
+        </array>
+        <key>type</key>
+        <string>standard</string>
+    </dict>
+</dict>"'
+  not_if 'defaults read com.apple.symbolichotkeys AppleSymbolicHotKeys |  rg --after-context 10 "\s+125\s=\s" - | rg "28," -'
+end
+
+execute 'キーボード->キーボードショートカット->Mission Control->デスクトップ9へ切り替え(126) に Ctrl + 9 を設定する' do
+  command 'defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 126 "
+<dict>
+    <key>enabled</key>
+    <true/>
+    <key>value</key>
+    <dict>
+        <key>parameters</key>
+        <array>
+            <integer>65535</integer>
+            <integer>25</integer>
+            <integer>262144</integer>
+        </array>
+        <key>type</key>
+        <string>standard</string>
+    </dict>
+</dict>"'
+  not_if 'defaults read com.apple.symbolichotkeys AppleSymbolicHotKeys |  rg --after-context 10 "\s+126\s=\s" - | rg "25," -'
+end
+
 execute 'キーボード->キーボードショートカット->入力ソース->前の入力ソースを選択(60) を無効にする' do
   command 'defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 60 "
 <dict>
@@ -290,6 +510,26 @@ execute 'キーボード->キーボードショートカット->Spotlight->Spotl
     </dict>
 </dict>"'
   not_if 'defaults read com.apple.symbolichotkeys AppleSymbolicHotKeys | rg --after-context 2 "\s+64\s=\s" - | rg "enabled\s=\s0" -'
+end
+
+execute 'キーボード->キーボードショートカット->アプリケーション->ほかを非表示 Cmd + Option + Shift + H を追加する' do
+  command 'defaults write -g NSUserKeyEquivalents -dict-add "\\\\U307b\\\\U304b\\\\U3092\\\\U975e\\\\U8868\\\\U793a" -string "@~\$h"'
+  not_if 'defaults read -g NSUserKeyEquivalents | grep -F "\\\\\\\\U307b\\\\\\\\U304b\\\\\\\\U3092\\\\\\\\U975e\\\\\\\\U8868\\\\\\\\U793a"'
+end
+
+execute 'キーボード->キーボードショートカット->アプリケーション->Hide Others Cmd + Option + Shift + H を追加する' do
+  command 'defaults write -g NSUserKeyEquivalents -dict-add "Hide Others" -string "@~\$h"'
+  not_if 'defaults read -g NSUserKeyEquivalents | grep -F "Hide Others"'
+end
+
+execute 'キーボード->キーボードショートカット->アプリケーション->その他を隠す Cmd + Option + Shift + H を追加する' do
+  command 'defaults write -g NSUserKeyEquivalents -dict-add "\\\\U305d\\\\U306e\\\\U4ed6\\\\U3092\\\\U96a0\\\\U3059" -string "@~\$h"'
+  not_if 'defaults read -g NSUserKeyEquivalents | grep -F "\\\\\\\\U305d\\\\\\\\U306e\\\\\\\\U4ed6\\\\\\\\U3092\\\\\\\\U96a0\\\\\\\\U3059"'
+end
+
+execute 'キーボード->キーボードショートカット->アプリケーション->ほかを隠す Cmd + Option + Shift + H を追加する' do
+  command 'defaults write -g NSUserKeyEquivalents -dict-add "\\\\U307b\\\\U304b\\\\U3092\\\\U96a0\\\\U3059" -string "@~\$h"'
+  not_if 'defaults read -g NSUserKeyEquivalents | grep -F "\\\\\\\\U307b\\\\\\\\U304b\\\\\\\\U3092\\\\\\\\U96a0\\\\\\\\U3059"'
 end
 
 execute 'キーボード->キーボードショートカット->ファンクションキー->F1、F2などのキーを標準のファンクションキーとして使用 を有効にする ' do
