@@ -32,7 +32,7 @@ execute 'killall Finder' do
   action :nothing
 end
 
-execute 'スクリーンショットを Downloads フォルダに保存する' do
+execute 'スクリーンショットを Downloads ディレクトリに保存する' do
   command 'defaults write com.apple.screencapture location ~/Downloads'
   not_if 'defaults read com.apple.screencapture location | grep "~/Downloads"'
   notifies :run, 'execute[killall SystemUIServer]'
