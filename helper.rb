@@ -20,5 +20,7 @@ define :install_asdf, url: nil, version: nil do
     not_if "asdf list #{params[:name]} #{params[:version]}"
   end
 
-  execute "asdf global #{params[:name]} #{params[:version]}"
+  execute "asdf global #{params[:name]} #{params[:version]}" do
+    not_if "asdf current | grep #{params[:name]} | grep #{params[:version]}"
+  end
 end
