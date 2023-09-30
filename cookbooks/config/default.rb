@@ -12,3 +12,10 @@ link File.join(ENV['HOME'], 'Library/Preferences/com.googlecode.iterm2.plist') d
   to File.expand_path('../files/com.googlecode.iterm2.plist', __FILE__)
   force true
 end
+
+# symlink だとうまく読めない
+execute "cp #{File.expand_path('../files/com.appknop.fuwari.plist', __FILE__)} \
+  $HOME/Library/Containers/com.appknop.fuwari/Data/Library/Preferences/com.appknop.fuwari.plist" do
+
+  not_if 'test -f $HOME/Library/Containers/com.appknop.fuwari/Data/Library/Preferences/com.appknop.fuwari.plist'
+end
