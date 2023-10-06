@@ -20,6 +20,8 @@ export EXA_COLORS="xx=37"
 
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 
+export ECSPRESSO_FILTER_COMMAND=fzf
+
 eval "$(sheldon source)"
 eval "$(starship init zsh)"
 eval "$(direnv hook zsh)"
