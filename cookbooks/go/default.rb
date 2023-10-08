@@ -5,7 +5,5 @@ cmds = [
 ]
 
 cmds.each do |cmd|
-  execute "go install #{cmd}@latest" do
-    not_if "which #{cmd.split('/').last}"
-  end
+  execute "go install #{cmd}@latest"
 end
