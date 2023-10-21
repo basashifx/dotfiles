@@ -33,3 +33,7 @@ end
 execute "cp #{File.expand_path('../files/com.appknop.fuwari.plist', __FILE__)} \
   $HOME/Library/Containers/com.appknop.fuwari/Data/Library/Preferences/com.appknop.fuwari.plist" do
 end
+
+execute "cp #{File.expand_path('../files/com.fiplab.pasteplaintext.plist', __FILE__)} \
+  $HOME/Library/Containers/com.fiplab.pasteplaintext/Data/Library/Preferences/com.fiplab.pasteplaintext.plist" do
+end
