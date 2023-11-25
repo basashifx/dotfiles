@@ -85,6 +85,12 @@ execute 'デスクトップとDock->Dockを自動的に表示/非表示 を有�
   notifies :run, 'execute[killall Dock]'
 end
 
+execute 'デスクトップとDock->壁紙をクリックしてデスクトップを表示 を無効にする' do
+  command 'defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -int 0'
+  not_if 'defaults read com.apple.WindowManager EnableStandardClickToShowDesktop | grep 0'
+  notifies :run, 'execute[killall Dock]'
+end
+
 execute 'デスクトップとDock->ホットコーナー->左上(corner) を無効にする' do
   command 'defaults write com.apple.dock wvous-tl-corner -int 0'
   not_if 'defaults read com.apple.dock wvous-tl-corner | grep 0'
