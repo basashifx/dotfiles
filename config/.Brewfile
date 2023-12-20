@@ -69,7 +69,6 @@ cask "iterm2"
 cask "jetbrains-toolbox"
 cask "karabiner-elements"
 cask "keepassx"
-cask "kindle"
 cask "microsoft-edge"
 cask "mysqlworkbench"
 cask "parallels"
@@ -89,6 +88,7 @@ mas "Amphetamine", id: 937984704
 mas "Display Maid", id: 450063525
 mas "Divvy", id: 413857545
 mas "Keynote", id: 409183694
+mas "Kindle", id: 302584613
 mas "Numbers", id: 409203825
 mas "Okta Verify", id: 490179405
 mas "Pages", id: 409201541
