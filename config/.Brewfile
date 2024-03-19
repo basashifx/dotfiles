@@ -51,7 +51,6 @@ brew "zsh"
 
 cask "1password"
 cask "appcleaner"
-cask "authy"
 cask "charles"
 cask "cheatsheet"
 cask "cyberduck"
