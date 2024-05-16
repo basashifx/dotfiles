@@ -23,7 +23,7 @@ end
 
 install_asdf 'terraform' do
   url 'https://github.com/asdf-community/asdf-hashicorp.git'
-  version '1.5.7'
+  version '1.8.3'
 end
 
 install_asdf 'ecspresso' do
