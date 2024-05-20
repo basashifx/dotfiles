@@ -1,4 +1,4 @@
-export PATH=/opt/homebrew/bin:/opt/homebrew/opt/curl/bin:/usr/local/bin:$PATH:/Applications/Xcode.app/Contents//Developer/usr/bin
+export PATH=/opt/homebrew/bin:/opt/homebrew/opt/curl/bin:$PATH:$HOME/bin:/Applications/Xcode.app/Contents//Developer/usr/bin
 
 export EDITOR=vim
 
