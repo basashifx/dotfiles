@@ -90,6 +90,7 @@ mas "Okta Verify", id: 490179405
 mas "Pages", id: 409201541
 mas "Paste Plain Text", id: 1407015686
 mas "ScreenNote", id: 1258500140
+mas "Speedtest", id: 1153157709
 mas "VirusBarrier Scanner", id: 1200445649
 mas "Xcode", id: 497799835
 mas "grsyncx", id: 1506997025
