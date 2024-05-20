@@ -1,7 +1,6 @@
 tap "fujiwara/tap"
 tap "github/gh"
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
 tap "knqyf263/utern"
 tap "minamijoyo/tfschema"
 
