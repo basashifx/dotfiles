@@ -16,6 +16,7 @@ brew "expect" # unbuffer に必要 ref: https://dev.classmethod.jp/articles/fzf-
 brew "eza"
 brew "fd"
 brew "fujiwara/tap/aswrap"
+brew "fujiwara/tap/ecrm"
 brew "fujiwara/tap/ecsta"
 brew "fujiwara/tap/lambroll"
 brew "fzf"
