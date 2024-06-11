@@ -8,7 +8,7 @@ config '.asdfrc'
 
 install_asdf 'golang' do
   url 'https://github.com/kennyp/asdf-golang.git'
-  version '1.22.3'
+  version '1.22.4'
 end
 
 install_asdf 'ruby' do
