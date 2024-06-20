@@ -21,6 +21,11 @@ install_asdf 'python' do
   version '3.11.5'
 end
 
+install_asdf 'nodejs' do
+  url 'https://github.com/asdf-vm/asdf-nodejs.git'
+  version '20.13.1'
+end
+
 install_asdf 'terraform' do
   url 'https://github.com/asdf-community/asdf-hashicorp.git'
   version '1.8.3'
