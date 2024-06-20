@@ -29,6 +29,7 @@ brew "git-delta"
 brew "git-secrets"
 brew "gnumeric" # ssconvert に必要
 brew "grep"
+brew "grpcurl"
 brew "htop"
 brew "imagemagick"
 brew "jq"
