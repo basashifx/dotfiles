@@ -6,6 +6,7 @@ tap "minamijoyo/tfschema"
 
 brew "awscli"
 brew "bat"
+brew "brave-browser"
 brew "buf"
 brew "colordiff"
 brew "ctop"
