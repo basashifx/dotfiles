@@ -33,7 +33,7 @@ end
 
 install_asdf 'ecspresso' do
   url 'https://github.com/kayac/asdf-ecspresso.git'
-  version '1.99.6'
+  version '2.4.0'
 end
 
 execute 'asdf plugin update --all'
