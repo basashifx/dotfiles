@@ -9,6 +9,7 @@ include_recipe 'helper'
 
 include_cookbook 'homebrew'
 
+include_cookbook 'barrier'
 include_cookbook 'config'
 include_cookbook 'git'
 include_cookbook 'ssh'
