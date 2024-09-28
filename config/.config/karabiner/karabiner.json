@@ -65,7 +65,7 @@
                         ]
                     },
                     {
-                        "description": "Mistel Barocco MD600用",
+                        "description": "Mistel Barocco MD600v3用",
                         "manipulators": [
                             {
                                 "from": {
@@ -226,16 +226,6 @@
                             "to": [
                                 {
                                     "key_code": "left_command"
-                                }
-                            ]
-                        },
-                        {
-                            "from": {
-                                "key_code": "right_command"
-                            },
-                            "to": [
-                                {
-                                    "key_code": "right_option"
                                 }
                             ]
                         },
