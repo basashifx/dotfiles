@@ -53,6 +53,12 @@ execute '外観->ウインドウで壁紙の色合い調整を許可 を無効�
   not_if 'defaults read -g AppleReduceDesktopTinting | grep 1'
 end
 
+execute 'アクセシビリティ->視差効果を減らす を有効にする(フルディスクアクセスの許可が必要)' do
+  command 'defaults write com.apple.universalaccess reduceMotion -bool true'
+  not_if 'defaults read com.apple.universalaccess reduceMotion | grep 1'
+  notifies :run, 'execute[killall Dock]'
+end
+
 execute 'コントロールセンター->Bluetooth をメニューバーに表示にする' do
   command 'defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.bluetooth" -int 1'
   not_if 'defaults read com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.bluetooth" | grep 1'
