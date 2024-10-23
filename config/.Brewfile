@@ -95,6 +95,7 @@ mas "Numbers", id: 409203825
 mas "Okta Verify", id: 490179405
 mas "Pages", id: 409201541
 mas "Paste Plain Text", id: 1407015686
+mas "Perplexity", id: 6714467650
 mas "ScreenNote", id: 1258500140
 mas "Speedtest", id: 1153157709
 mas "VirusBarrier Scanner", id: 1200445649
