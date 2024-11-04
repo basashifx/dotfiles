@@ -39,6 +39,7 @@ brew "lazydocker"
 brew "libyaml" # ruby build に必要 ref: https://qiita.com/notakaos/items/e3e30443b1e57f84e7d8
 brew "mas"
 brew "minamijoyo/tfschema/tfschema"
+brew "nkf"
 brew "protobuf"
 brew "ripgrep"
 brew "sheldon"
