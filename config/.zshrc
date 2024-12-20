@@ -26,6 +26,7 @@ eval "$(sheldon source)"
 eval "$(starship init zsh)"
 eval "$(direnv hook zsh)"
 
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 # 初回は asdf で go が入ってないので go があるか確認する
 if type go > /dev/null 2>&1; then
     export GOPATH=$HOME/go

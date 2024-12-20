@@ -4,6 +4,7 @@ tap "homebrew/bundle"
 tap "knqyf263/utern"
 tap "minamijoyo/tfschema"
 
+brew "asdf"
 brew "awscli"
 brew "bat"
 brew "buf"
