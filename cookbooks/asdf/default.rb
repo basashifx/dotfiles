@@ -13,7 +13,7 @@ end
 
 install_asdf 'ruby' do
   url 'https://github.com/asdf-vm/asdf-ruby.git'
-  version '3.3.1'
+  version '3.4.1'
 end
 
 install_asdf 'python' do
