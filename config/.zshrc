@@ -31,7 +31,7 @@ export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 if type go > /dev/null 2>&1; then
     export GOPATH=$HOME/go
     export CGO_ENABLED=0
-    export PATH=$(go env GOPATH)/bin:$PATH
+    export PATH=$GOPATH/bin:$PATH
     export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 fi
 fpath=(${ASDF_DIR}/completions $fpath)
