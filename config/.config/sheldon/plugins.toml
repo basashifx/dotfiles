@@ -15,6 +15,9 @@ github = 'marlonrichert/zsh-autocomplete'
 github = 'zsh-users/zsh-syntax-highlighting'
 apply = ['defer']
 
+[plugins.zsh-notify]
+github = 'marzocchi/zsh-notify'
+
 [plugins.enhancd]
 github = 'babarot/enhancd'
 use = ['init.sh']

@@ -37,6 +37,14 @@ fpath=(${ASDF_DIR}/completions $fpath)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 bindkey "^f" fzf-file-widget
 
+# ref: https://github.com/marzocchi/zsh-notify/blob/master/notify.plugin.zsh
+zstyle ':notify:*' command-complete-timeout 10
+zstyle ':notify:*' error-title "Failed! (took #{time_elapsed})"
+zstyle ':notify:*' success-title "Succeeded! (took #{time_elapsed})"
+zstyle ':notify:*' error-sound "Glass"
+zstyle ':notify:*' success-sound "Glass"
+zstyle ':notify:*' blacklist-regex 'dotfiles/bin/init|submit-trade'
+
 # ref: https://github.com/Songmu/ghq-handbook/blob/master/ja/05-command-list.md
 function fzf-cd-ghq () {
     local repo=$(ghq list | fzf --query "$LBUFFER")
