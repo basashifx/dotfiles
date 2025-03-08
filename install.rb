@@ -12,6 +12,7 @@ include_cookbook 'homebrew'
 include_cookbook 'barrier'
 include_cookbook 'config'
 include_cookbook 'git'
+include_cookbook 'obsidian'
 include_cookbook 'ssh'
 include_cookbook 'zsh'
 
